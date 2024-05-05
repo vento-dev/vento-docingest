@@ -1,0 +1,32 @@
+<html>
+
+<body>
+    <table class="table table-bordered" id="myTable">
+        <thead>
+            <tr>
+                <th>FIELD</th>
+                <th>VALUE</th>
+                <!-- <th>CONFIDENCE</th> -->
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in r %}
+            <tr>
+                <td>Customer Name</td>
+                <td> {{data.CustomerName}}</td>
+                <td>Statement End Date</td>
+                <td>{{data.stmt-end-date}}</td>
+                <td>Institution Name</td>
+                <td>{{data.InstitutionName}}</td>
+                <td>Ending Balance</td>
+                <td>{{data.EndingBalance}}</td>
+                <td>Total Deposits</td>
+                <td>{{ data.TotalDeposits }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

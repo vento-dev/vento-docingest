@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<body>
+    {% for doc_uri in result %}
+    <table border=1>
+        <th>
+            <tr>
+                <td>
+                    <a href={{ doc_uri }}><img src="{{ doc_uri }}" width=85px height=65px>
+                </td>
+            </tr>
+        </th>
+        <!-- <tr> -->
+        <!--     <td>Whole thing, raw text</td> -->
+        <!--     <td>{{ result[doc_uri].text }}</td> -->
+        <!-- </tr> -->
+        {% for entity in result[doc_uri].entities %}
+        <tr>
+            <td> {{ entity.type }} </td>
+            <td> {{ entity.mention_text }} </td>
+            <td> {{ entity.confidence }} </td>
+            <td> {{ entity.text }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endfor %}
+</body>
+
+</html>
